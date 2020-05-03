@@ -11,7 +11,7 @@ let x=document.getElementById('seriesname').value;
 if(window.XMLHttpRequest)
 {
     xmlhttp = new XMLHttpRequest();
-} else {
+}else {
     xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
 }
 xmlhttp.onreadystatechange = function(){
@@ -67,15 +67,15 @@ function showresult()
     console.log(datastring);
 
     $.ajax({
-                    type: "POST",
-                    url: 'name1.php',
-                    data: datastring,
-                    success: function(data)
-                    {
-                        console.log(data);
-                        window.location = "http://localhost/Tvtracker/tv_show.php?t="+id;
-                    }
-                });
+            type: "POST",
+            url: 'name1.php',
+            data: datastring,
+            success: function(data)
+            {
+                console.log(data);
+                window.location = "http://localhost/Tvtracker/tv_show.php?t="+id;
+            }
+        });
 }
 
 

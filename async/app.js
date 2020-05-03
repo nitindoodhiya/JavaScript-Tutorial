@@ -167,46 +167,46 @@
 
 
 
-console.log("Start"); 
-function loginUser(email, password ){ 
-    return new Promise(( resolve, reject) => { 
-        setTimeout(() =>{ 
-            console.log("Now we have the data"); 
-            reject(new Error("Nill"));
-            resolve({ userEmail: email });  
-        }, 1000)
-    }); 
-} 
-function getUserVideos(email) {
-    return new Promise(( resolve, reject) => { 
-        setTimeout(() =>{ 
-            console.log("Now we have videos"); 
-            resolve( ['video1','v2','v3']);  
-        }, 1000)
-    }); 
-} 
+// console.log("Start"); 
+// function loginUser(email, password ){ 
+//     return new Promise(( resolve, reject) => { 
+//         setTimeout(() =>{ 
+//             console.log("Now we have the data"); 
+            
+//             resolve({ userEmail: email });  
+//         }, 1000)
+//     }); 
+// } 
+// function getUserVideos(email) {
+//     return new Promise(( resolve, reject) => { 
+//         setTimeout(() =>{ 
+//             console.log("Now we have videos"); 
+//             resolve( ['video1','v2','v3']);  
+//         }, 1000)
+//     }); 
+// } 
 
-function getVideoDetail(video) {
-    return new Promise(( resolve, reject) => { 
-        setTimeout(() =>{ 
-            console.log("Title of video"); 
-            resolve( 'Perfect-Ed Sheeran');  
-        }, 1000)
-    }); 
-} 
+// function getVideoDetail(video) {
+//     return new Promise(( resolve, reject) => { 
+//         setTimeout(() =>{ 
+//             console.log("Title of video"); 
+//             resolve( 'Perfect-Ed Sheeran');  
+//         }, 1000)
+//     }); 
+// } 
 
-async function displayUserDetails() {
-    try {
-        const logedUser = await loginUser("Nitin@gmail.com","pass");
-        const videos = await getUserVideos(logedUser.email);
-        const detail = await getVideoDetail(videos[0]);
-        console.log(detail);
-    } catch (error) {
-        throw error;
-    }
-}
+// async function displayUserDetails() {
+//     try {
+//         const logedUser = await loginUser("Nitin@gmail.com","pass");
+//         const videos = await getUserVideos(logedUser.email);
+//         const detail = await getVideoDetail(videos[0]);
+//         console.log(detail);
+//     } catch (error) {
+//         throw error;
+//     }
+// }
 
-displayUserDetails();
-console.log("Finish");
+// displayUserDetails();
+// console.log("Finish");
 
 
