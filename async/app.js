@@ -1,6 +1,7 @@
+
+
 //1
 
-// console.log("Whats thee Expected output?");
 
 // function OtherFun(params) {
     
@@ -23,28 +24,31 @@
 
 // console.log('start');
 
-
+// function OtherFun(){
 // setTimeout(() =>{
     
 //     console.log('We are in setTimeOut');
     
-// },2000);
+//    },2000);
+// }
+// OtherFun();
 // console.log('End');
 
-//CallStack webAPIs
-
+// https://gist.github.com/jesstelford/9a35d20a2aa044df8bf241e00d7bc2d0
 
 //3
-//Assuming login SignUp
-// console.log("Stert"); 
+// Assuming login SignUp
+// console.log("Start"); 
 // function loginUser(email, password ){ 
 //     setTimeout(() =>{ 
-//         console.log("Now we have the data"); 
+//         console.log("Now we have the data: "+ email); 
+        
 //         return { userEmail: email };  
-//     }, 5000)
+//     }, 2000)
 // } 
 // const user = loginUser("jsfun@js.com", 123456); 
 // console.log(user); 
+
 // console.log("Finish");
 
 
@@ -57,11 +61,11 @@
 // function loginUser(email, password,callback ){ 
 //     setTimeout(() =>{ 
 //         console.log("Now we have the data"); 
-//         callback({ userEmail: email });  
-//     }, 5000)
+//         callback({ userEmail : email });  
+//     }, 2000)
 // } 
 // const user = loginUser("jsfun@js.com", 123456, user =>{
-//     console.log(user);
+//     console.log(user.userEmail);
 // }); 
 
 // console.log("Finish");
@@ -78,7 +82,7 @@
 //     setTimeout(() =>{ 
 //         console.log("Now we have the data"); 
 //         callback({ userEmail: email });  
-//     }, 5000)
+//     }, 2000)
 // } 
 // function getUserVideos(email,callback) {
 //     setTimeout(()=>{
@@ -89,7 +93,7 @@
 //     console.log(user);
 //     getUserVideos(user.userEmail, vid => {
 //         console.log(vid);
-//     })
+//     });
 // }); 
 
 // console.log("Finish");
@@ -123,7 +127,10 @@
 // function loginUser(email, password ){ 
 //     return new Promise(( resolve, reject) => { 
 //         setTimeout(() =>{ 
+
 //             console.log("Now we have the data"); 
+//             if(email==="")
+//                 reject("Empty Email");
 //             resolve({ userEmail: email });  
 //         }, 1000)
 //     }); 
@@ -131,7 +138,9 @@
 // function getUserVideos(email) {
 //     return new Promise(( resolve, reject) => { 
 //         setTimeout(() =>{ 
-//             console.log("Now we have videos"); 
+//             console.log("Now we have videos");
+//             if(email==="1")
+//                 reject("Sorry I love you as friend!");
 //             resolve( ['video1','v2','v3']);  
 //         }, 1000)
 //     }); 
@@ -140,22 +149,27 @@
 // function getVideoDetail(video) {
 //     return new Promise(( resolve, reject) => { 
 //         setTimeout(() =>{ 
-//             console.log("Title of video"); 
+//             console.log("Sending Title of video"); 
 //             resolve( 'Perfect-Ed Sheeran');  
 //         }, 1000)
 //     }); 
 // } 
-// // const user = loginUser("jsfun@js.com", 123456, user =>{
+// // const user = loginUser(email, password, user =>{
 // //     console.log(user);
 // //     getUserVideos(user.userEmail, vid => {
 // //         console.log(vid);
 // //     })
 // // }); 
-
-// loginUser("Nitin@gmail.com","haha")
+// var email="properemail@gmail.com";
+// var password = "";
+// loginUser(email,password)
 // .then(user => getUserVideos(user.userEmail))
-// .then(video => getVideoDetail(video[1]))
-// .then(detail => console.log(detail));
+// .then(video => getVideoDetail(video[0]))
+// .then(detail => console.log(detail)).catch(err => {
+
+//     console.log(err);
+
+// });
 
 // console.log("Finish");
 
